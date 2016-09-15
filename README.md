@@ -3,6 +3,8 @@ CRUD App using React and Redux
 
 The app uses boilerplate from https://github.com/coryhouse/pluralsight-redux-starter
 
+Functionality: Add, Edit, Delete products
+
 Work-in-progress
 
 ## Using
