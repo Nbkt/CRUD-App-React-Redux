@@ -20,8 +20,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
+    "fixed-data-table": "^0.6.3",
+    "font-awesome": "^4.6.3",
     "jquery": "2.2.3",
     "react": "15.0.2",
     "react-dom": "15.0.2",
@@ -70,5 +73,4 @@
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
   }
-
 }

@@ -80,6 +80,8 @@ export class ManageProductPage extends React.Component {
     });
   }
 
+
+
   redirectDelete() {
     this.setState({ deleting: false });
     toastr.success('Product Deleted');

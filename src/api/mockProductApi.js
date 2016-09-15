@@ -38,6 +38,14 @@ const products = [
     linkHref: "http://www.newegg.com/Product/Product.aspx?Item=N82E16819117369",
     manufacturerId: "amd",
     category: "CPU"
+  },
+
+  {
+    id: "GTX 970",
+    title: "VGA GTX 970 Nvidia",
+    linkHref: "http://www.newegg.com/Product/Product.aspx?Item=N82E16819117369",
+    manufacturerId: "Nvidia",
+    category: "VGA"
   }
 ];
 

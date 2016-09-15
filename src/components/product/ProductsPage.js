@@ -12,7 +12,22 @@ class ProductsPage extends React.Component {
 
   constructor(props, context) {
     super(props, context);
+
+    this.state = {
+      sortedT: false,
+      sortedM: false,
+      sortedC: false
+    };
+
+    this.sortProductByTitle = this.sortProductByTitle.bind(this);
+    this.sortProductByManufacturer = this.sortProductByManufacturer.bind(this);
+    this.sortProductByCategory = this.sortProductByCategory.bind(this);
+
   }
+
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({products: Object.assign({}, nextProps.products)});
+  // }
 
   productRow(product, index) {
     return <div key={index}>{product.title}</div>;
@@ -20,6 +35,39 @@ class ProductsPage extends React.Component {
 
   redirectToAddProductPage() {
    browserHistory.push('/product');
+  }
+
+  sortProductByTitle(event) {
+    event.preventDefault();
+    if(this.state.sortedT) {
+      this.setState({ sortedT: false });
+    } else {
+      this.setState({ sortedT: true });
+    }
+    this.props.actions.sortProductByTitle(this.props.products, this.state.sortedT);
+
+  }
+
+  sortProductByManufacturer(event) {
+    event.preventDefault();
+    if(this.state.sortedM) {
+      this.setState({ sortedM: false });
+    } else {
+      this.setState({ sortedM: true });
+    }
+    this.props.actions.sortProductByManufacturer(this.props.products, this.state.sortedM);
+
+  }
+
+  sortProductByCategory(event) {
+    event.preventDefault();
+    if(this.state.sortedC) {
+      this.setState({ sortedC: false });
+    } else {
+      this.setState({ sortedC: true });
+    }
+    this.props.actions.sortProductByCategory(this.props.products, this.state.sortedC);
+
   }
 
 
@@ -39,6 +87,10 @@ class ProductsPage extends React.Component {
         <ProductList
         products={products}
         onDelete={this.deleteProduct}
+        sortProductByTitle={this.sortProductByTitle}
+        sortProductByManufacturer={this.sortProductByManufacturer}
+        sortProductByCategory={this.sortProductByCategory}
+
         />
       </div>
     );
