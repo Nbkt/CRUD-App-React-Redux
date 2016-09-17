@@ -25,32 +25,32 @@ export default function productReducer(state = initialState.products, action) {
 
     }
 
-    case types.SORT_PRODUCT_TITLE_ASC: {
+    case types.SORT_PRODUCTS_TITLE_ASC: {
       const newState = Object.assign([], state);
       return _.orderBy(newState, ['title'], ['asc']);
     }
 
-    case types.SORT_PRODUCT_TITLE_DESC: {
+    case types.SORT_PRODUCTS_TITLE_DESC: {
       const newState = Object.assign([], state);
       return _.orderBy(newState, ['title'], ['desc']);
     }
 
-    case types.SORT_PRODUCT_MANUFACTURER_ASC: {
+    case types.SORT_PRODUCTS_MANUFACTURER_ASC: {
       const newState = Object.assign([], state);
       return _.orderBy(newState, ['manufacturerId'], ['asc']);
     }
 
-    case types.SORT_PRODUCT_MANUFACTURER_DESC: {
+    case types.SORT_PRODUCTS_MANUFACTURER_DESC: {
       const newState = Object.assign([], state);
       return _.orderBy(newState, ['manufacturerId'], ['desc']);
     }
 
-    case types.SORT_PRODUCT_CATEGORY_ASC: {
+    case types.SORT_PRODUCTS_CATEGORY_ASC: {
       const newState = Object.assign([], state);
       return _.orderBy(newState, ['category'], ['asc']);
     }
 
-    case types.SORT_PRODUCT_CATEGORY_DESC: {
+    case types.SORT_PRODUCTS_CATEGORY_DESC: {
       const newState = Object.assign([], state);
       return _.orderBy(newState, ['category'], ['desc']);
     }

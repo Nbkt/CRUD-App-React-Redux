@@ -2,19 +2,19 @@ import React, {PropTypes} from 'react';
 import ProductListRow from './ProductListRow';
 
 
-const ProductList = ({products, sortProductByTitle, sortProductByCategory, sortProductByManufacturer}) => {
+const ProductList = ({products, sortProductsByTitle, sortProductsByCategory, sortProductsByManufacturer}) => {
 
   return (
     <div className="table-responsive">
       <table className="table">
         <thead>
           <tr>
-            <th onClick={sortProductByTitle} className="no-wrap">Title <i className="fa fa-fw fa-sort"></i></th>
-            <th onClick={sortProductByManufacturer} className="no-wrap"><span className="iwt">Manufacturer <i className="fa fa-fw fa-sort"></i></span></th>
-            <th onClick={sortProductByCategory} className="no-wrap">Category <i className="fa fa-fw fa-sort"></i></th>
+            <th onClick={sortProductsByTitle} className="no-wrap">Title <i className="fa fa-fw fa-sort"></i></th>
+            <th onClick={sortProductsByManufacturer} className="no-wrap"><span className="iwt">Manufacturer <i className="fa fa-fw fa-sort"></i></span></th>
+            <th onClick={sortProductsByCategory} className="no-wrap">Category <i className="fa fa-fw fa-sort"></i></th>
 
             <th className="no-wrap">Link</th>
-
+            
           </tr>
         </thead>
         <tbody>
@@ -30,9 +30,9 @@ const ProductList = ({products, sortProductByTitle, sortProductByCategory, sortP
 
 ProductList.propTypes = {
   products: PropTypes.array.isRequired,
-  sortProductByCategory: PropTypes.func.isRequired,
-  sortProductByTitle: PropTypes.func.isRequired,
-  sortProductByManufacturer: PropTypes.func.isRequired
+  sortProductsByCategory: PropTypes.func.isRequired,
+  sortProductsByTitle: PropTypes.func.isRequired,
+  sortProductsByManufacturer: PropTypes.func.isRequired
 
 };
 

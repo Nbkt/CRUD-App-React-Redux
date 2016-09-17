@@ -20,6 +20,11 @@ const manufacturers = [
   {
     id: 'msi',
     name: "MSI"
+  },
+
+  {
+    id: 'nvidia',
+    name: "Nvidia"
   }
 
 ];

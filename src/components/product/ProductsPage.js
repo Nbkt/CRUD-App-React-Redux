@@ -19,9 +19,9 @@ class ProductsPage extends React.Component {
       sortedC: false
     };
 
-    this.sortProductByTitle = this.sortProductByTitle.bind(this);
-    this.sortProductByManufacturer = this.sortProductByManufacturer.bind(this);
-    this.sortProductByCategory = this.sortProductByCategory.bind(this);
+    this.sortProductsByTitle = this.sortProductsByTitle.bind(this);
+    this.sortProductsByManufacturer = this.sortProductsByManufacturer.bind(this);
+    this.sortProductsByCategory = this.sortProductsByCategory.bind(this);
 
   }
 
@@ -37,36 +37,36 @@ class ProductsPage extends React.Component {
    browserHistory.push('/product');
   }
 
-  sortProductByTitle(event) {
+  sortProductsByTitle(event) {
     event.preventDefault();
     if(this.state.sortedT) {
       this.setState({ sortedT: false });
     } else {
       this.setState({ sortedT: true });
     }
-    this.props.actions.sortProductByTitle(this.props.products, this.state.sortedT);
+    this.props.actions.sortProductsByTitle(this.props.products, this.state.sortedT);
 
   }
 
-  sortProductByManufacturer(event) {
+  sortProductsByManufacturer(event) {
     event.preventDefault();
     if(this.state.sortedM) {
       this.setState({ sortedM: false });
     } else {
       this.setState({ sortedM: true });
     }
-    this.props.actions.sortProductByManufacturer(this.props.products, this.state.sortedM);
+    this.props.actions.sortProductsByManufacturer(this.props.products, this.state.sortedM);
 
   }
 
-  sortProductByCategory(event) {
+  sortProductsByCategory(event) {
     event.preventDefault();
     if(this.state.sortedC) {
       this.setState({ sortedC: false });
     } else {
       this.setState({ sortedC: true });
     }
-    this.props.actions.sortProductByCategory(this.props.products, this.state.sortedC);
+    this.props.actions.sortProductsByCategory(this.props.products, this.state.sortedC);
 
   }
 
@@ -87,9 +87,9 @@ class ProductsPage extends React.Component {
         <ProductList
         products={products}
         onDelete={this.deleteProduct}
-        sortProductByTitle={this.sortProductByTitle}
-        sortProductByManufacturer={this.sortProductByManufacturer}
-        sortProductByCategory={this.sortProductByCategory}
+        sortProductsByTitle={this.sortProductsByTitle}
+        sortProductsByManufacturer={this.sortProductsByManufacturer}
+        sortProductsByCategory={this.sortProductsByCategory}
 
         />
       </div>

@@ -18,27 +18,27 @@ export function deleteProductSuccess(product) {
   return { type: types.DELETE_PRODUCT_SUCCESS, product };
 }
 
-export function sortProductByTitle(products, sorted) {
+export function sortProductsByTitle(products, sorted) {
   if (sorted) {
-    return { type: types.SORT_PRODUCT_TITLE_DESC, products };
+    return { type: types.SORT_PRODUCTS_TITLE_DESC, products };
   } else {
-    return { type: types.SORT_PRODUCT_TITLE_ASC, products };
+    return { type: types.SORT_PRODUCTS_TITLE_ASC, products };
   }
 }
 
-export function sortProductByManufacturer(products, sorted) {
+export function sortProductsByManufacturer(products, sorted) {
   if (sorted) {
-    return { type: types.SORT_PRODUCT_MANUFACTURER_DESC, products };
+    return { type: types.SORT_PRODUCTS_MANUFACTURER_DESC, products };
   } else {
-    return { type: types.SORT_PRODUCT_MANUFACTURER_ASC, products };
+    return { type: types.SORT_PRODUCTS_MANUFACTURER_ASC, products };
   }
 }
 
-export function sortProductByCategory(products, sorted) {
+export function sortProductsByCategory(products, sorted) {
   if (sorted) {
-    return { type: types.SORT_PRODUCT_CATEGORY_DESC, products };
+    return { type: types.SORT_PRODUCTS_CATEGORY_DESC, products };
   } else {
-    return { type: types.SORT_PRODUCT_CATEGORY_ASC, products };
+    return { type: types.SORT_PRODUCTS_CATEGORY_ASC, products };
   }
 }
 
