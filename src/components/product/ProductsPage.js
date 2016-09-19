@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as productActions from '../../actions/productActions';
 import ProductList from './ProductList';
+import SearchBar from './SearchBar';
 import {browserHistory} from 'react-router';
 import toastr from 'toastr';
 
@@ -22,6 +23,7 @@ class ProductsPage extends React.Component {
     this.sortProductsByTitle = this.sortProductsByTitle.bind(this);
     this.sortProductsByManufacturer = this.sortProductsByManufacturer.bind(this);
     this.sortProductsByCategory = this.sortProductsByCategory.bind(this);
+    this.searchProducts = this.searchProducts.bind(this);
 
   }
 
@@ -70,6 +72,10 @@ class ProductsPage extends React.Component {
 
   }
 
+  searchProducts(term) {
+    this.props.actions.searchProducts(this.props.products, term);
+  }
+
 
 
 
@@ -84,6 +90,9 @@ class ProductsPage extends React.Component {
         className="btn btn-primary"
         onClick={this.redirectToAddProductPage}
        />
+
+        <SearchBar onSearchTermChange={this.searchProducts} />
+
         <ProductList
         products={products}
         onDelete={this.deleteProduct}
@@ -105,7 +114,8 @@ ProductsPage.propTypes = {
 function mapStateToProps(state, ownProps) {
 
   return {
-    products : state.products
+    products : state.products,
+    term: state.term
   };
 }
 

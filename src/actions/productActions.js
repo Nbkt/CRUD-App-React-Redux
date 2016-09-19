@@ -6,6 +6,10 @@ export function loadProductsSuccess(products) {
   return { type: types.LOAD_PRODUCTS_SUCCESS, products };
 }
 
+export function searchProductsSuccess(products) {
+  return { type: types.SEARCH_PRODUCTS_SUCCESS, products };
+}
+
 export function createProductSuccess(product) {
   return { type: types.CREATE_PRODUCT_SUCCESS, product };
 }
@@ -76,4 +80,17 @@ export function deleteProduct(product) {
         throw(error);
       });
     };
+
+
+}
+
+export function searchProducts(products, query) {
+  return function(dispatch) {
+    dispatch(beginAjaxCall());
+    return productAPI.searchProducts(query).then(products => {
+      dispatch(searchProductsSuccess(products));
+    }).catch(error => {
+      throw(error);
+    });
+  };
 }

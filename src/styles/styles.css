@@ -19,6 +19,10 @@ nav {
   margin-left: 20px;
 }
 
-.no-wrap{
+.no-wrap {
   white-space: nowrap;
+}
+
+.search-bar {
+  margin-top: 20px;
 }

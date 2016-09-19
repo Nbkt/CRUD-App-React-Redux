@@ -55,6 +55,10 @@ export default function productReducer(state = initialState.products, action) {
       return _.orderBy(newState, ['category'], ['desc']);
     }
 
+    case types.SEARCH_PRODUCTS_SUCCESS: {
+      return action.products;
+    }
+
 
 
 

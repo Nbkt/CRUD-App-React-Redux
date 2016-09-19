@@ -1,4 +1,5 @@
 import delay from './delay';
+import { searchFor } from '../components/util/util';
 
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
@@ -102,6 +103,16 @@ class ProductApi {
         });
         products.splice(indexOfProductToDelete, 1);
         resolve();
+      }, delay);
+    });
+  }
+
+  //Using searchProducts function from util.js
+  static searchProducts(query) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const results = searchFor(products, query);
+        resolve(Object.assign([], results));
       }, delay);
     });
   }

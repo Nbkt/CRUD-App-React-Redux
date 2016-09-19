@@ -26,7 +26,7 @@ export class ManageProductPage extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (typeof nextProps.product != 'undefined') {
       if (this.props.product.id !== nextProps.product.id ) {
-        //necessary to populate form when existing course is loaded directly.
+        //necessary to populate form when existing products are loaded directly.
         this.setState({product: Object.assign({}, nextProps.product)});
       }
     }
